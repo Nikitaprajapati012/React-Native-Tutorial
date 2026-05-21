@@ -9,11 +9,12 @@
 import 'react-native-gesture-handler';
 // import { Button, StyleSheet, Text, View } from 'react-native'
 // import { createNativeStackNavigator } from '@react-navigation/native-stack/'
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+// import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import {createMaterialTopTabNavigator, createMeterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 import { NavigationContainer } from '@react-navigation/native/'
 import { Alert, Button, StyleSheet, Text, View } from 'react-native';
-import React from 'react'
-import Icon from 'react-native-vector-icons/Ionicons'
+import React from 'react';
+import Icon from 'react-native-vector-icons/Ionicons';
 // import About from 'src/navigation-screens/About';
 // import { View } from 'react-native'
 // import Home from 'src/navigation-screens/Home';
@@ -54,66 +55,6 @@ import Icon from 'react-native-vector-icons/Ionicons'
 // import Styling from './src/components/Styling'
 // import LoginForm from 'src/components/LoginForm'
 
-//1. Stack Navigation...
-// const Stack = createNativeStackNavigator();
-// const headerTitle = () => <Button title='One' color='red' onPress={sayHello}/>
-// const headerRight = () => <Button title='Two' color='green' onPress={sayHello}/>
-// const sayHello = () => {
-//   Alert.alert('Hello user')
-// }
-// const MyExample = () => <Example/>
-
-
-//2. Drawer Navigation...
-// const Drawer = createDrawerNavigator()
-// const HomeScreen = ({navigation}) => (
-//   <View style={styles.screenContainer}>
-//     <Text style={styles.headerTitle}>Home Screen</Text>
-//     <Button title='Open Drawer' onPress={()=> navigation.openDrawer()}/>
-//   </View> )
-// const ProfileScreen = ({navigation}) => (
-//   <View style={styles.screenContainer}>
-//     <Text style={styles.headerTitle}>Profile Screen</Text>
-//     <Button title='Open Drawer' onPress={()=> navigation.openDrawer()}/>
-//   </View>
-//   )
-// const SettingScreen = ({navigation}) => (
-//   <View style={styles.screenContainer}>
-//     <Text style={styles.headerTitle}>Settings Screen</Text>
-//     <Button title='Open Drawer' onPress={()=> navigation.openDrawer()}/>
-//   </View>
-// )
-
-//3. BottomTab Navigation...
-const Tab = createBottomTabNavigator();
-const HomeScreen = () => (
-  <View style={styles.container}>
-    <Text style={styles.text}>Home Screen</Text>
-  </View>
-)
-const ProfileScreen = () => (
-  <View style={styles.container}>
-    <Text style={styles.text}>Profile Screen</Text>
-  </View>
-)
-const SettingScreen = () => (
-  <View style={styles.container}>
-    <Text style={styles.text}>Setting Screen</Text>
-  </View>
-)
-const getTabBarIcon = (routeName,focused,color,size) => {
-let iconName;
-if (routeName === 'Home') {
-  iconName = focused ? 'home' : 'home-outline'
-
-}else if (routeName === 'Profile') {
-  iconName = focused ? 'person' : 'person-outline'
-
-}else if (routeName === 'Settings') {
-  iconName = focused ? 'settings' : 'settings-outline'
-}
-return <Icon name={iconName} size={size} color={color}/>
-}
 
 //Components and API...
 // const App = () => {
@@ -249,7 +190,16 @@ return <Icon name={iconName} size={size} color={color}/>
 //   )
 // }
 
+
 //Navigation start here....
+//1. Stack Navigation...
+// const Stack = createNativeStackNavigator();
+// const headerTitle = () => <Button title='One' color='red' onPress={sayHello}/>
+// const headerRight = () => <Button title='Two' color='green' onPress={sayHello}/>
+// const sayHello = () => {
+//   Alert.alert('Hello user')
+// }
+// const MyExample = () => <Example/>
 //1. Stack Navigation...
 // const App = () => {
 //   return (
@@ -294,6 +244,26 @@ return <Icon name={iconName} size={size} color={color}/>
 //   )
 // }
 
+
+//2. Drawer Navigation...
+// const Drawer = createDrawerNavigator()
+// const HomeScreen = ({navigation}) => (
+//   <View style={styles.screenContainer}>
+//     <Text style={styles.headerTitle}>Home Screen</Text>
+//     <Button title='Open Drawer' onPress={()=> navigation.openDrawer()}/>
+//   </View> )
+// const ProfileScreen = ({navigation}) => (
+//   <View style={styles.screenContainer}>
+//     <Text style={styles.headerTitle}>Profile Screen</Text>
+//     <Button title='Open Drawer' onPress={()=> navigation.openDrawer()}/>
+//   </View>
+//   )
+// const SettingScreen = ({navigation}) => (
+//   <View style={styles.screenContainer}>
+//     <Text style={styles.headerTitle}>Settings Screen</Text>
+//     <Button title='Open Drawer' onPress={()=> navigation.openDrawer()}/>
+//   </View>
+// )
 //2. Drawer Navigation...
 // const App = () => {
 //   return (
@@ -324,35 +294,120 @@ return <Icon name={iconName} size={size} color={color}/>
 //   )
 // }
 
-//3. Bottom tab navigation start here...
+
+//3. BottomTab Navigation...
+// const Tab = createBottomTabNavigator();
+// const HomeScreen = () => (
+//   <View style={styles.container}>
+//     <Text style={styles.text}>Home Screen</Text>
+//   </View>
+// )
+// const ProfileScreen = () => (
+//   <View style={styles.container}>
+//     <Text style={styles.text}>Profile Screen</Text>
+//   </View>
+// )
+
+// const SettingScreen = () => (
+//   <View style={styles.container}>
+//     <Text style={styles.text}>Setting Screen</Text>
+//   </View>
+// )
+// const getTabBarIcon = (routeName,focused,color,size) => {
+// let iconName;
+// if (routeName === 'Home') {
+//   iconName = focused ? 'home' : 'home-outline';
+
+// }
+// else
+//    if (routeName === 'Profile') {
+//   iconName = focused ? 'person' : 'person-outline';
+// }
+
+// else
+//    if (routeName === 'Settings') {
+//   iconName = focused ? 'settings' : 'settings-outline';
+// }
+// return <Icon name={iconName} size={size} color={color}/>
+// }
+
+// //3. Bottom tab navigation start here...
+// const App = () => {
+//   return (
+// <NavigationContainer>
+// <Tab.Navigator
+// screenOptions={({route}) => (
+//   {
+//     tabBarIcon: ({focused,color,size}) => getTabBarIcon(route.name,focused,color,size),
+//     tabBarActiveTintColor:'blue',
+//     tabBarInactiveTintColor:'gray',
+//     tabBarStyle:{
+//       paddingBottom:5,
+//       height:60,
+//     }
+//   }
+// )}
+// >
+//       <Tab.Screen name="Home" component={HomeScreen}/>
+//       <Tab.Screen name="Profile" component={ProfileScreen}/>
+//       <Tab.Screen name="Settings" component={SettingScreen}/>
+//     </Tab.Navigator>
+// </NavigationContainer>
+//   )
+// }
+
+// 4.Top Tap navigation here...
+const TopTab = createMaterialTopTabNavigator();
+const ChatScreen = () => (
+  <View style={styles.topTapContainer}>
+    <Text style={styles.topTapText}>Chat Screen</Text>
+  </View>
+);
+
+const StatusScreen = () => (
+  <View style={styles.topTapContainer}>
+    <Text style={styles.topTapText}>Status Screen</Text>
+  </View>
+);
+
+const CallScreen = () => (
+  <View style={styles.topTapContainer}>
+    <Text style={styles.topTapText}>Calls Screen</Text>
+  </View>
+);
+
 const App = () => {
-  return (
-<NavigationContainer>
-<Tab.Navigator
-screenOptions={({route}) => (
-  {
-    tabBarIcon: ({focused,color,size}) => getTabBarIcon(route.name,focused,color,size),
-    tabBarActiveTintColor:'blue',
-    tabBarInactiveTintColor:'#bfbfbf',
-    tabBarStyle:{
-      paddingBottom:5,
-      height:60,
-    }
-  }
-)}
->
-      <Tab.Screen name="Home" component={HomeScreen}/>
-      <Tab.Screen name="Profile" component={ProfileScreen}/>
-      <Tab.Screen name="Settings" component={SettingScreen}/>
-    </Tab.Navigator>
-</NavigationContainer>
+  return(
+    <NavigationContainer>
+      <TopTab.Navigator 
+       screenOptions={
+        {
+          tabBarActiveTintColor:'blue',
+          tabBarInactiveTintColor:'gray',
+          tabBarStyle:{
+            backgroundColor:'white'
+          },
+          tabBarIndicatorContainerStyle:{
+            backgroundColor:'blue',
+            height:3,
+          },
+          tabBarLabelStyle:{
+            fontSize:16,
+          }
+        }
+       }>
+        <TopTab.Screen name="Chats" component={ChatScreen}/>
+        <TopTab.Screen name="Status" component={StatusScreen}/>
+        <TopTab.Screen name="Calls" component={CallScreen}/>
+      </TopTab.Navigator>
+    </NavigationContainer>
   )
 }
-
 export default App
 
 const styles = StyleSheet.create(
   {
+    //Stack Navigation...
     header:{    backgroundColor:'#6200ee',}   ,
     headerTitle:{
       fontWeight:'bold',
@@ -362,6 +417,7 @@ const styles = StyleSheet.create(
 backgroundColor:'lightgreen',
     },
 
+    //Side Drawer navigation...
     screenContainer:{
       flex:1,
       justifyContent:'center',
@@ -373,6 +429,8 @@ backgroundColor:'lightgreen',
       fontWeight:'bold',
       marginBottom:20,
     },
+
+    //Bottom tab navigation...
     container:{
 flex:1,
 alignItems:'center',
@@ -384,5 +442,17 @@ backgroundColor:'#f8f9fa',
       fontWeight:'bold',
       color:'#343a40'
     },
+
+    //Top Tap navigation...
+    topTapContainer:{
+      flex:1,
+      justifyContent:'center',
+      alignItems:'center',
+      backgroundColor:'#f0f2f5'
+    },
+    topTapText:{
+      fontSize:18,
+
+    }
   }
 )
