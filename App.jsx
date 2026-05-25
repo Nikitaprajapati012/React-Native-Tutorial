@@ -14,7 +14,9 @@ import {createMaterialTopTabNavigator, createMeterialTopTabNavigator} from '@rea
 import { NavigationContainer } from '@react-navigation/native/'
 import { Alert, Button, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
-import Icon from 'react-native-vector-icons/Ionicons';
+// import Icon from 'react-native-vector-icons/Ionicons';
+// import AsyncStorageExample from 'src/components/AsyncStorageExample';
+import ImageComponentExample from 'src/components/ImageComponentExample';
 // import About from 'src/navigation-screens/About';
 // import { View } from 'react-native'
 // import Home from 'src/navigation-screens/Home';
@@ -357,52 +359,63 @@ import Icon from 'react-native-vector-icons/Ionicons';
 // }
 
 // 4.Top Tap navigation here...
-const TopTab = createMaterialTopTabNavigator();
-const ChatScreen = () => (
-  <View style={styles.topTapContainer}>
-    <Text style={styles.topTapText}>Chat Screen</Text>
-  </View>
-);
+// const TopTab = createMaterialTopTabNavigator();
+// const ChatScreen = () => (
+//   <View style={styles.topTapContainer}>
+//     <Text style={styles.topTapText}>Chat Screen</Text>
+//   </View>
+// );
 
-const StatusScreen = () => (
-  <View style={styles.topTapContainer}>
-    <Text style={styles.topTapText}>Status Screen</Text>
-  </View>
-);
+// const StatusScreen = () => (
+//   <View style={styles.topTapContainer}>
+//     <Text style={styles.topTapText}>Status Screen</Text>
+//   </View>
+// );
 
-const CallScreen = () => (
-  <View style={styles.topTapContainer}>
-    <Text style={styles.topTapText}>Calls Screen</Text>
-  </View>
-);
+// const CallScreen = () => (
+//   <View style={styles.topTapContainer}>
+//     <Text style={styles.topTapText}>Calls Screen</Text>
+//   </View>
+// );
+
+// // 4.Top Tap navigation ...
+// const App = () => {
+//   return(
+//     <NavigationContainer>
+//       <TopTab.Navigator 
+//        screenOptions={
+//         {
+//           tabBarActiveTintColor:'blue',
+//           tabBarInactiveTintColor:'gray',
+//           tabBarStyle:{
+//             backgroundColor:'white'
+//           },
+//           tabBarIndicatorContainerStyle:{
+//             backgroundColor:'blue',
+//             height:3,
+//           },
+//           tabBarLabelStyle:{
+//             fontSize:16,
+//           }
+//         }
+//        }>
+//         <TopTab.Screen name="Chats" component={ChatScreen}/>
+//         <TopTab.Screen name="Status" component={StatusScreen}/>
+//         <TopTab.Screen name="Calls" component={CallScreen}/>
+//       </TopTab.Navigator>
+//     </NavigationContainer>
+//   )
+// }
 
 const App = () => {
   return(
-    <NavigationContainer>
-      <TopTab.Navigator 
-       screenOptions={
-        {
-          tabBarActiveTintColor:'blue',
-          tabBarInactiveTintColor:'gray',
-          tabBarStyle:{
-            backgroundColor:'white'
-          },
-          tabBarIndicatorContainerStyle:{
-            backgroundColor:'blue',
-            height:3,
-          },
-          tabBarLabelStyle:{
-            fontSize:16,
-          }
-        }
-       }>
-        <TopTab.Screen name="Chats" component={ChatScreen}/>
-        <TopTab.Screen name="Status" component={StatusScreen}/>
-        <TopTab.Screen name="Calls" component={CallScreen}/>
-      </TopTab.Navigator>
-    </NavigationContainer>
+// {/* <AsyncStorageExample/> */}
+<View>
+<ImageComponentExample/>
+</View>
   )
 }
+
 export default App
 
 const styles = StyleSheet.create(
