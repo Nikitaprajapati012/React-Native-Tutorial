@@ -10,13 +10,14 @@ import 'react-native-gesture-handler';
 // import { Button, StyleSheet, Text, View } from 'react-native'
 // import { createNativeStackNavigator } from '@react-navigation/native-stack/'
 // import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import {createMaterialTopTabNavigator, createMeterialTopTabNavigator} from '@react-navigation/material-top-tabs';
-import { NavigationContainer } from '@react-navigation/native/'
+// import {createMaterialTopTabNavigator, createMeterialTopTabNavigator} from '@react-navigation/material-top-tabs';
+// import { NavigationContainer } from '@react-navigation/native/'
 import { Alert, Button, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 // import Icon from 'react-native-vector-icons/Ionicons';
 // import AsyncStorageExample from 'src/components/AsyncStorageExample';
-import ImageComponentExample from 'src/components/ImageComponentExample';
+// import ImageComponentExample from 'src/components/ImageComponentExample';
+import Parent from 'src/components/Parent';
 // import About from 'src/navigation-screens/About';
 // import { View } from 'react-native'
 // import Home from 'src/navigation-screens/Home';
@@ -410,8 +411,9 @@ import ImageComponentExample from 'src/components/ImageComponentExample';
 const App = () => {
   return(
 // {/* <AsyncStorageExample/> */}
-<View>
-<ImageComponentExample/>
+<View style={{flex:1}}>
+{/* <ImageComponentExample/> */}
+<Parent/>
 </View>
   )
 }
