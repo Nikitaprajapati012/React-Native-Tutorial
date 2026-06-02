@@ -8,6 +8,7 @@
  * @format
  */
 import 'react-native-gesture-handler';
+import './global.css';
 // import { Button, StyleSheet, Text, View } from 'react-native'
 // import { createNativeStackNavigator } from '@react-navigation/native-stack/'
 // import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -18,10 +19,13 @@ import React from 'react';
 // import Icon from 'react-native-vector-icons/Ionicons';
 // import AsyncStorageExample from 'src/components/AsyncStorageExample';
 // import ImageComponentExample from 'src/components/ImageComponentExample';
-import Parent from 'src/components/Parent';
-import CounterRedux from 'src/components/CounterRedux';
-import {Provider} from 'react-redux'
-import { store } from 'src/redux/store/Store';
+// import Parent from 'src/components/Parent';
+// import CounterRedux from 'src/components/CounterRedux';
+// import {Provider} from 'react-redux'
+// import { store } from 'src/redux/store/Store';
+// import One from 'src/components/One';
+// import MyLogin from 'src/components/MyLogin';
+import AnimatedCardFlip from 'src/components/AnimatedCardFlip';
 // import About from 'src/navigation-screens/About';
 // import { View } from 'react-native'
 // import Home from 'src/navigation-screens/Home';
@@ -418,9 +422,12 @@ const App = () => {
 <View style={{flex:1}}>
 {/* <ImageComponentExample/> */}
 {/* <Parent/> */}
-<Provider store={store} >
+{/* <Provider store={store} >
 <CounterRedux/>
-</Provider>
+</Provider> */}
+{/* <One/> */}
+{/* <MyLogin/> */}
+<AnimatedCardFlip/>
 </View>
   )
 }

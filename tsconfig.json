@@ -1,13 +1,18 @@
 {
   "extends": "@react-native/typescript-config",
   "compilerOptions": {
-    "types": ["jest"],
+    "types": [
+      "jest"
+    ],
     "allowJs": true,
     "checkJs": false,
     "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
-      "*": ["*", "src/*"]
+      "*": [
+        "*",
+        "src/*"
+      ]
     }
   },
   "include": [
@@ -16,7 +21,11 @@
     "src/**/*",
     "__tests__/**/*",
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx",
+    "nativewind-env.d.ts"
   ],
-  "exclude": ["**/node_modules", "**/Pods"]
+  "exclude": [
+    "**/node_modules",
+    "**/Pods"
+  ]
 }
