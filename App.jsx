@@ -1,4 +1,4 @@
-/* eslint-disable react-native/no-inline-styles */
+ 
  
  
 /**
@@ -10,10 +10,10 @@
 import 'react-native-gesture-handler';
 import './global.css';
 // import { Button, StyleSheet, Text, View } from 'react-native'
-// import { createNativeStackNavigator } from '@react-navigation/native-stack/'
+import { createNativeStackNavigator } from '@react-navigation/native-stack/'
 // import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 // import {createMaterialTopTabNavigator, createMeterialTopTabNavigator} from '@react-navigation/material-top-tabs';
-// import { NavigationContainer } from '@react-navigation/native/'
+import { NavigationContainer } from '@react-navigation/native/'
 import { Alert, Button, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 // import Icon from 'react-native-vector-icons/Ionicons';
@@ -26,6 +26,10 @@ import React from 'react';
 // import One from 'src/components/One';
 // import MyLogin from 'src/components/MyLogin';
 import AnimatedCardFlip from 'src/components/AnimatedCardFlip';
+import Register from 'src/components/Register';
+import Login from 'src/navigation-screens/Login';
+import LoginFirebase from 'src/components/LoginFirebase';
+import ForgotPassword from 'src/components/ForgotPassword';
 // import About from 'src/navigation-screens/About';
 // import { View } from 'react-native'
 // import Home from 'src/navigation-screens/Home';
@@ -416,19 +420,34 @@ import AnimatedCardFlip from 'src/components/AnimatedCardFlip';
 //   )
 // }
 
+const Stack = createNativeStackNavigator();
+
 const App = () => {
   return(
 // {/* <AsyncStorageExample/> */}
-<View style={{flex:1}}>
-{/* <ImageComponentExample/> */}
-{/* <Parent/> */}
-{/* <Provider store={store} >
-<CounterRedux/>
-</Provider> */}
-{/* <One/> */}
-{/* <MyLogin/> */}
-<AnimatedCardFlip/>
-</View>
+
+<NavigationContainer>
+<Stack.Navigator>
+<Stack.Screen name='Login' component={LoginFirebase} options={{headerShown:false}}/>
+  <Stack.Screen name='Register' component={Register} options={{headerShown:false}}/>
+  <Stack.Screen name='ForgotPassword' component={ForgotPassword} options={{headerShown:false}}/>
+</Stack.Navigator>
+</NavigationContainer>
+
+// {/* <View style={{flex:1}}>
+// {/* <ImageComponentExample/> */}
+// {/* <Parent/> */}
+// {/* <Provider store={store} >
+// <CounterRedux/>
+// </Provider> */}
+// {/* <One/> */}
+// {/* <MyLogin/> */}
+// {/* <AnimatedCardFlip/> */}
+// {/* <Register/> */}
+// {/* <LoginFirebase/> */}
+// {/* <ForgotPassword/> */}
+// </View> */}
+
   )
 }
 
