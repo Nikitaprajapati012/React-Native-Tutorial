@@ -29,6 +29,8 @@ import UserFirebaseCRUD from 'src/components/UserFirebaseCRUD';
 import LoginFirebase from 'src/components/LoginFirebase';
 import Register from 'src/components/Register';
 import ForgotPassword from 'src/components/ForgotPassword';
+import {Switch} from 'react-native-gesture-handler';
+import SwitchUI from 'src/database/SwitchUI';
 // import About from 'src/navigation-screens/About';
 // import { View } from 'react-native'
 // import Home from 'src/navigation-screens/Home';
@@ -271,42 +273,42 @@ const App = () => {
 
   return (
     // {/* <AsyncStorageExample/> */}
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
-          name="Login"
-          component={LoginFirebase}
-          options={{headerShown: false}}
-        />
-        <Stack.Screen
-          name="Register"
-          component={Register}
-          options={{headerShown: false}}
-        />
-        <Stack.Screen
-          name="ForgotPassword"
-          component={ForgotPassword}
-          options={{headerShown: false}}
-        />
-        <Stack.Screen
-          name="UserFirebaseCRUD"
-          component={UserFirebaseCRUD}
-          options={{headerShown: false}}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
+    // <NavigationContainer>
+    //   <Stack.Navigator>
+    //     <Stack.Screen
+    //       name="Login"
+    //       component={LoginFirebase}
+    //       options={{headerShown: false}}
+    //     />
+    //     <Stack.Screen
+    //       name="Register"
+    //       component={Register}
+    //       options={{headerShown: false}}
+    //     />
+    //     <Stack.Screen
+    //       name="ForgotPassword"
+    //       component={ForgotPassword}
+    //       options={{headerShown: false}}
+    //     />
+    //     <Stack.Screen
+    //       name="UserFirebaseCRUD"
+    //       component={UserFirebaseCRUD}
+    //       options={{headerShown: false}}
+    //     />
+    //   </Stack.Navigator>
+    // </NavigationContainer>
 
-    //     {/* <View style={{flex: 1}}>
-    //       {/* <ImageComponentExample/> */}
-    //       {/* <Parent/> */}
-    //       {/* <Provider store={store} >
-    // <CounterRedux/>
-    // </Provider> */}
-    //       {/* <One/> */}
-    //       {/* <MyLogin/> */}
-    //       {/* <AnimatedCardFlip/> */}
-    //       {/* <UserFirebaseCRUD /> */}
-    //     </View> */}
+    <View style={{flex: 1}}>
+      {/* <ImageComponentExample/> */}
+      {/* <Parent/> */}
+      {/* <Provider store={store} >
+    <CounterRedux/>
+    </Provider> */}
+      {/* <One/> */}
+      {/* <MyLogin/> */}
+      {/* <AnimatedCardFlip/> */}
+      <SwitchUI />
+    </View>
   );
 };
 export default App;

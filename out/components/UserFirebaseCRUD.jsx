@@ -162,7 +162,7 @@ const UserFirebaseCRUD = ({navigation}) => {
           data={users}
           keyExtractor={item => item.id}
           renderItem={({item}) => (
-            <View className="bg-white flex-col justify-start items-start p-4 mt-4 rounded-lg shadow-lg w-full max-w-md mx-auto">
+            <View className="bg-white flex-col justify-start items-center p-4 mt-4 rounded-lg shadow-lg w-full max-w-md mx-auto">
               <View>
                 <Text className="font-semibold text-lg text-gray-800">
                   {item.name}
@@ -171,7 +171,7 @@ const UserFirebaseCRUD = ({navigation}) => {
                 <Text className="text-gray-600">{item.phone}</Text>
               </View>
 
-              <View className="flex-row items-end">
+              <View className="flex-row">
                 <TouchableOpacity
                   onPress={() => handleEdit(item)}
                   className="rounded-lg bg-green-500 p-2 mr-2">
