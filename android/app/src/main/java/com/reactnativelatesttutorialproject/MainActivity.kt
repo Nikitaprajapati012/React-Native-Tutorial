@@ -6,6 +6,8 @@ import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint.fabricEnable
 import com.facebook.react.defaults.DefaultReactActivityDelegate
 import android.os.Bundle
 import com.swmansion.rnscreens.fragment.restoration.RNScreensFragmentFactory
+import org.devio.rn.splashscreen.SplashScreen;
+
 
 class MainActivity : ReactActivity() {
 
@@ -15,6 +17,11 @@ class MainActivity : ReactActivity() {
    */
   override fun getMainComponentName(): String = "ReactNativeLatestTutorialProject"
 
+  override fun onCreate(savedInstanceState: Bundle?) {
+        SplashScreen.show(this)
+        super.onCreate(savedInstanceState)
+    }
+    
   /**
    * Returns the instance of the [ReactActivityDelegate]. We use [DefaultReactActivityDelegate]
    * which allows you to enable New Architecture with a single boolean flags [fabricEnabled]
@@ -22,8 +29,4 @@ class MainActivity : ReactActivity() {
   override fun createReactActivityDelegate(): ReactActivityDelegate =
       DefaultReactActivityDelegate(this, mainComponentName, fabricEnabled)
 
-       override fun onCreate(savedInstanceState: Bundle?) {
-    supportFragmentManager.fragmentFactory = RNScreensFragmentFactory()
-    super.onCreate(savedInstanceState)
-  }
 }
